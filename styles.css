@@ -1,0 +1,126 @@
+:root {
+  --bg: #f4f4f4;
+  --ink-strong: #333; /* başlıklar ve header/footer arka planı */
+  --ink: #666;        /* paragraf metni */
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(0,0,0,.08);
+  --container: 1100px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* yazı tipi: Arial, sans-serif */
+  background: var(--bg);          /* arka plan: #f4f4f4 */
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  background: var(--ink-strong); /* #333 */
+  color: #fff;
+  padding: 24px 0;
+  border-radius: 12px;
+  margin: 16px;
+}
+
+.site-header h1 {
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu a {
+  color: #fff;               
+  text-decoration: none;
+  font-weight: 600;
+}
+.menu a:hover,
+.menu a:focus {
+  color: #fff;               
+  text-decoration: underline; 
+  text-underline-offset: 3px;
+}
+
+.section-title {
+  color: var(--ink-strong);
+  margin: 24px 0 12px 0;
+}
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+@media (max-width: 760px) {
+  .posts { grid-template-columns: 1fr; } /* mobilde tek sütun */
+}
+
+.card {
+  background: #fff;                  /* beyaz zemin */
+  border-radius: var(--radius);      /* yuvarlatılmış köşeler */
+  box-shadow: var(--shadow);         /* gölge efekti */
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card-body { padding: 16px 18px 20px; }
+.card-title {
+  margin: 8px 0 6px 0;
+  color: var(--ink-strong);
+}
+.card-title a {
+  color: var(--ink-strong);          
+  text-decoration: none;
+}
+.card-title a:hover,
+.card-title a:focus {
+  color: var(--ink-strong);          
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.card-text { margin: 0; color: var(--ink); }
+
+.post {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin: 24px 0 56px;
+}
+.post-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.post h2 { color: var(--ink-strong); margin: 8px 0 12px; }
+.post p { color: var(--ink); }
+
+.site-footer {
+  background: var(--ink-strong); 
+  color: #fff;
+  padding: 20px 0;
+  border-radius: 12px;
+  margin: 0 16px 16px;
+  text-align: center;
+}
+.site-footer p { margin: 0; }
